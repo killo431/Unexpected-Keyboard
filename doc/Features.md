@@ -83,3 +83,15 @@ The keyboard height (as a percentage of screen height) and individual key sizes 
 ## 20. Editor-Aware Layout Switching
 
 The keyboard detects the input field type reported by the app (plain text, password, email, URI, number, etc.) and can adjust its layout accordingly. In Termux the input is always plain text, but this feature prevents the keyboard from auto-capitalising or offering word suggestions in contexts where those behaviours would interfere with command input.
+
+## 21. Gemini AI — Text and Code Generation
+
+The `gemini` key opens a built-in dialog that connects to Google's Gemini 2.0 Flash model via the free Gemini REST API. In **Generate Text** mode you can ask any open-ended question, rephrase text, or request a summary. In **Generate Code** mode you describe the code you need and receive only the code — no prose — ready to paste into an editor or directly into a Termux session. The result can be inserted at the cursor position with a single tap. A free API key from [Google AI Studio](https://aistudio.google.com/app/apikey) is required; the key is stored locally in the keyboard's private storage and is never shared.
+
+Setup instructions: [doc/Gemini-AI-Setup.md](Gemini-AI-Setup.md)
+
+## 22. Termux Run — Execute Shell Scripts from the Keyboard
+
+The `termux_run` key opens a dialog that sends any shell command or multi-line script to [Termux](https://termux.dev) for immediate execution via the `com.termux.RUN_COMMAND` intent. Choosing **Show in Termux terminal window** brings Termux to the foreground so you can read the output; unchecking it runs the command silently in the background. This eliminates the round-trip of switching to Termux, typing (or pasting) a command, and switching back — everything stays in the keyboard dialog.
+
+Setup instructions: [doc/Termux-Run-Setup.md](Termux-Run-Setup.md)

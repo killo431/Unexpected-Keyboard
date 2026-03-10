@@ -32,9 +32,16 @@ Improve the application translations [using Weblate](https://hosted.weblate.org/
 
 ## Features
 
-A ranked overview of the 20 most important features — with terminal and shell
+A ranked overview of the 22 most important features — with terminal and shell
 usage as the primary lens — is available in
 [doc/Features.md](doc/Features.md).
+
+## AI and Scripting
+
+| Feature | Description | Setup guide |
+|---------|-------------|-------------|
+| **Gemini AI** (`gemini` key) | Generate text and code via the free Gemini API — result inserts directly at the cursor. | [doc/Gemini-AI-Setup.md](doc/Gemini-AI-Setup.md) |
+| **Termux Run** (`termux_run` key) | Execute shell commands and scripts in Termux without leaving your current app. | [doc/Termux-Run-Setup.md](doc/Termux-Run-Setup.md) |
 
 ## Contributing
 
