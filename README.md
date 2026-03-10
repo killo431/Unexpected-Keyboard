@@ -30,6 +30,12 @@ Improve the application translations [using Weblate](https://hosted.weblate.org/
 
 [<img src="https://hosted.weblate.org/widget/unexpected-keyboard/multi-auto.svg" alt="État de la traduction" />](https://hosted.weblate.org/engage/unexpected-keyboard/)
 
+## Features
+
+A ranked overview of the 20 most important features — with terminal and shell
+usage as the primary lens — is available in
+[doc/Features.md](doc/Features.md).
+
 ## Contributing
 
 For instructions on building the application, see
