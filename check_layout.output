@@ -25,7 +25,16 @@ latin_kbdtuf_tr: These keys are now added automatically, unexpected: f11_placeho
 latin_kbdtuf_tr: Missing programming keys, missing: loc esc, loc tab
 latn_colemak: Some keys contain whitespaces, unexpected:  ́
 latn_dvorak: Missing important key, missing: loc capslock
+latn_gaming_emoji: Duplicate keys: ?, GG, [, gg, }, ×, ⇧, ⏩, ⏪, ⏭, ⏸, ►, ▼, ⚔, ✓, ❌, ❤, ⬅, ⬆, 🆙, 🎤, 🎮, 🎯, 👍, 👎, 💚, 💥, 📍, 📦, 🔄, 🔊, 🔥, 😂, 😱
+latn_gaming_emoji: Layout includes some ASCII punctuation but not all, missing: ", #, $, %, &, ', *, +, ,, -, /, <, =, >, \, ^, _, `, |, ~
+latn_gaming_emoji: Layout contains editing keys, unexpected: undo
+latn_gaming_emoji: Missing important key, missing: loc capslock
+latn_gaming_emoji: Layout contains unknown keys: SHIFT, attack, away, base, build, call, chat, clear, command, defend, dodge, equip, exit, fight, finish, fire, forward, game, good, good game, guild, heal, health, help, hide, info, inventory, item, join, jump, kick, kill, laugh, leave, level, lobby, loot, mission, next, nice, no problem, number, options, pause, play, profile, quit, reload, respawn, restart, save, shift lock, shoot, skill, target, team, thanks, trade, unlock, upload, view, voice, vote, well played, zone, zoom
+latn_international_polyglot: Duplicate keys: !, ", &, ,, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, ;, ?, @, [, ], loc esc, ¡, §, ©, «, ®, °, ±, ¶, ·, », ¿, Ç, Ð, Ñ, ×, Þ, ã, ç, ð, ñ, ÷, þ, Ď, ď, Đ, đ, Ĺ, ĺ, ļ, Ľ, ľ, Ł, ł, Œ, œ, Ş, ş, Ț, ț, ‘, ’, ‚, „, †, •, ‣, …, ‹, ›, ₹, ≈, ≠, ≤, ≥
+latn_international_polyglot: Layout includes some ASCII punctuation but not all, missing: _, |, ~
 latn_neo2: Layout redefines the bottom row but some important keys are missing, missing: loc switch_clipboard, switch_developer
+latn_programming_pro: Duplicate keys: !, !=, ", #, $, %, &, &&, ', (, ), *, */, +, ..., /, /*, ::, :=, <, <-, <<, <=, <=>, =, ==, =>, >, ?, @, [, \, ], ^, `, const, delete, loc esc, {, |, |>, ||, }, ~, ¢, ¦, ±, ¿, ÷, €, ∧
+latn_programming_pro: Layout contains unknown keys: #include, &mut, args, assert, async, auto, await, base, bool, break, buffer, build, byte, call, case, catch, char, class, const, continue, data, default, dict, double, echo, elif, else, enum, exit, export, extends, false, final, finally, from, func, function, generic, global, goto, group, guard, handle, hash, head, help, html, http, https, impl, import, include, index, interface, join, json, jump, keyof, kill, kwargs, lambda, length, list, local, loop, main, match, method, module, name, namespace, next, none, null, object, override, package, param, pass, print, private, protected, public, query, quit, range, regex, render, require, return, reverse, select, self, static, string, struct, super, switch, then, this, throw, true, type, undefined, union, unique, unsigned, until, update, vector, virtual, void, where, while, with, write, yield, zero
 latn_qwertz_cz_multifunctional: Layout includes some ASCII punctuation but not all, missing: `
 latn_qwertz_sk: Layout includes some ASCII punctuation but not all, missing: `
 latn_qzerty_it: Layout includes some ASCII punctuation but not all, missing: #, $, \, `, ~
