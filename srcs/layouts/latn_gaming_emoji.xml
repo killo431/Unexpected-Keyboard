@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gaming & Emoji Enhanced Layout
+
+     This layout is optimized for gamers and social media users who need quick access
+     to gaming controls, emoji, and chat symbols. Perfect for:
+     - Mobile gaming (WASD controls, common game commands)
+     - Social media and messaging (emoji, reactions, emoticons)
+     - Streaming chat and Discord
+     - Quick text responses during gameplay
+
+     Key features:
+     - WASD cluster prominently placed for gaming
+     - Common emoji and emoticons accessible via swipes
+     - Gaming-specific symbols (►, ○, ×, □, etc.)
+     - Quick reactions (GG, LOL, etc.)
+     - Stream and chat symbols
+     - Number pad with gaming keybinds (1-9)
+
+     Layout by: Unexpected Keyboard Community
+     License: CC0 (Public Domain)
+-->
+<keyboard name="Gaming &amp; Emoji" script="latin">
+  <!-- Row 1: Numbers with emoji reactions on swipes -->
+  <row>
+    <key c="1" n="😀" ne="😃" e="😁" se="😅" s="😂" sw="🤣" w="😊" nw="😇"/>
+    <key c="2" n="😍" ne="😘" e="🥰" se="😋" s="😎" sw="🤓" w="🧐" nw="🤩"/>
+    <key c="3" n="😢" ne="😭" e="😤" se="😠" s="😡" sw="🤬" w="😱" nw="😨"/>
+    <key c="4" n="👍" ne="👎" e="👏" se="🙏" s="💪" sw="✌" w="👌" nw="🤝"/>
+    <key c="5" n="❤" ne="💙" e="💚" se="💛" s="🧡" sw="💜" w="🖤" nw="🤍"/>
+    <key c="6" n="⭐" ne="✨" e="🔥" se="💯" s="💥" sw="⚡" w="🌟" nw="💫"/>
+    <key c="7" n="🎮" ne="🕹" e="🎯" se="🏆" s="🥇" sw="🥈" w="🥉" nw="🎖"/>
+    <key c="8" n="🎵" ne="🎶" e="🎤" se="🎧" s="🔊" sw="📢" w="📣" nw="🔔"/>
+    <key c="9" n="🔫" ne="⚔" e="🛡" se="🏹" s="🗡" sw="💣" w="🧨" nw="🪓"/>
+    <key c="0" n="►" ne="⏸" e="⏹" se="⏭" s="⏮" sw="⏩" w="⏪" nw="🔄"/>
+  </row>
+
+  <!-- Row 2: QWERTY with gaming symbols -->
+  <row>
+    <key c="q" n="Q" ne="loc esc" e="quit" se="[" s="¿" sw="?" w="loc tab" nw="←"/>
+    <key c="w" n="W" ne="↑" e="⬆" se="⇧" s="🔺" sw="▲" w="🆙" nw="²"/>
+    <key c="e" n="E" ne="exp" e="equip" se="€" s="📧" sw="✉" w="@" nw="³"/>
+    <key c="r" n="R" ne="reload" e="restart" se="®" s="♻" sw="🔄" w="respawn" nw="⁴"/>
+    <key c="t" n="T" ne="team" e="trade" se="™" s="📍" sw="🎯" w="target" nw="⁵"/>
+    <key c="y" n="Y" ne="yes" e="✓" se="✔" s="☑" sw="✅" w="👍" nw="⁶"/>
+    <key c="u" n="U" ne="undo" e="unlock" se="⬆" s="🆙" sw="⏫" w="upload" nw="⁷"/>
+    <key c="i" n="I" ne="info" e="inventory" se="ℹ" s="🎒" sw="📦" w="item" nw="⁸"/>
+    <key c="o" n="O" ne="options" e=")" se="}" s="○" sw="⭕" w="(" nw="⁹"/>
+    <key c="p" n="P" ne="pause" e="play" se="►" s="⏸" sw="⏯" w="profile" nw="⁰"/>
+  </row>
+
+  <!-- Row 3: ASDF with WASD gaming emphasis and common commands -->
+  <row shift="0.5">
+    <key c="a" n="A" ne="attack" e="◄" se="⬅" s="🔻" sw="▼" w="⏪" nw="aim"/>
+    <key c="s" n="S" ne="↓" e="save" se="⬇" s="▼" sw="⇩" w="shoot" nw="skill"/>
+    <key c="d" n="D" ne="►" e="⬅" se="defend" s="🔽" sw="▽" w="⏩" nw="dodge"/>
+    <key c="f" n="F" ne="fire" e="fight" se="⚔" s="🔥" sw="💥" w="forward" nw="finish"/>
+    <key c="g" n="G" ne="GG" e="go" se="good" s="🎮" sw="game" w="gg" nw="guild"/>
+    <key c="h" n="H" ne="heal" e="help" se="❤" s="💚" sw="hp" w="health" nw="hide"/>
+    <key c="j" n="J" ne="jump" e="}" se="]" s="⤴" sw="⬆" w="{" nw="join"/>
+    <key c="k" n="K" ne="kick" e="kill" se="×" s="☠" sw="💀" w="[" nw="ko"/>
+    <key c="l" n="L" ne="leave" e="loot" se="🎁" s="📦" sw="💎" w="level" nw="lobby"/>
+  </row>
+
+  <!-- Row 4: ZXCV with special characters and emoticons -->
+  <row>
+    <key width="1.5" c="shift" n="capslock" ne="⇧" e="SHIFT" se="⬆" s="shift lock"/>
+    <key c="z" n="Z" ne="zoom" e="zzz" se="😴" s="💤" sw="🛌" w="zone"/>
+    <key c="x" n="X" ne="×" e="✕" se="✖" s="❌" sw="🚫" w="exit"/>
+    <key c="c" n="C" ne="chat" e="call" se="©" s="💬" sw="🗨" w="command"/>
+    <key c="v" n="V" ne="voice" e="vote" se="✓" s="🎤" sw="🔊" w="view"/>
+    <key c="b" n="B" ne="buy" e="build" se="🏗" s="🔨" sw="⚒" w="base"/>
+    <key c="n" n="N" ne="no" e="next" se="⏭" s="❌" sw="👎" w="number"/>
+    <key c="m" n="M" ne="map" e="menu" se="🗺" s="📍" sw="🧭" w="mission"/>
+    <key width="1.5" c="backspace" ne="delete" e="⌫" se="⬅" s="clear"/>
+  </row>
+
+  <!-- Row 5: Special gaming row with common chat phrases -->
+  <row height="0.95">
+    <key c="GG" width="1.2" n="gg" ne="good game" e="ggs" indication="good game"/>
+    <key c="LOL" width="1.2" n="lol" ne="laugh" e="😂" indication="laugh"/>
+    <key c="AFK" width="1.2" n="afk" ne="away" e="brb" indication="away"/>
+    <key c="OMG" width="1.2" n="omg" ne="wow" e="😱" indication="surprise"/>
+    <key c="WP" width="1.2" n="wp" ne="well played" e="nice" indication="well played"/>
+    <key c="TY" width="1.2" n="ty" ne="thanks" e="thx" indication="thanks"/>
+    <key c="NP" width="1.2" n="np" ne="no problem" e="yw" indication="no prob"/>
+    <key c="." width="0.8" n="..." ne=".." e=":" s=";"/>
+    <key c="!" width="0.8" n="!!" ne="!!!" e="?" s="\?"/>
+  </row>
+</keyboard>

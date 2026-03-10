@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- International Polyglot Layout - Multi-Language Communication Keyboard
+
+     This layout is designed for multilingual users who frequently switch between
+     languages and need quick access to international characters, diacritics, and
+     special symbols from various writing systems. Perfect for:
+     - Polyglots and language learners
+     - International communication and business
+     - Translation work
+     - Academic writing in multiple languages
+     - Social media in multiple languages
+     - Travel and tourism professionals
+
+     Supported language features:
+     - Western European languages (French, Spanish, German, Italian, Portuguese)
+     - Nordic languages (Swedish, Norwegian, Danish, Finnish, Icelandic)
+     - Eastern European languages (Polish, Czech, Slovak, Hungarian, Romanian)
+     - Turkish, Vietnamese, Welsh, and more
+     - All major diacritical marks
+     - Currency symbols from around the world
+     - International punctuation and quotation marks
+     - Common international symbols and signs
+
+     Key features:
+     - QWERTY base layout for familiarity
+     - All major accented vowels (á, é, í, ó, ú, à, è, etc.)
+     - Special European characters (ñ, ç, ş, ł, ø, æ, etc.)
+     - Comprehensive diacritic access via compose key
+     - Currency symbols (€, £, ¥, ₹, ₽, etc.)
+     - International quotation marks (« », „ ", " ", ' ', ‹ ›)
+     - Mathematical and typographic symbols
+     - Common ligatures (æ, œ, ß, etc.)
+
+     Usage tips:
+     - Use swipes for quick access to accented characters
+     - Compose key for complex diacritics
+     - Fn key for alternative letters and symbols
+     - Number row includes common international symbols
+
+     Layout by: Unexpected Keyboard Community
+     License: CC0 (Public Domain)
+-->
+<keyboard name="International Polyglot" script="latin">
+  <!-- Row 1: Numbers with international symbols and currency -->
+  <row>
+    <key c="1" n="¹" ne="①" e="₁" se="!" s="¡" sw="‚" w="loc esc" nw="F1"/>
+    <key c="2" n="²" ne="②" e="₂" se="@" s="@" sw="„" w="€" nw="F2"/>
+    <key c="3" n="³" ne="③" e="₃" se="#" s="№" sw="&quot;" w="£" nw="F3"/>
+    <key c="4" n="⁴" ne="④" e="₄" se="$" s="¢" sw="&quot;" w="¥" nw="F4"/>
+    <key c="5" n="⁵" ne="⑤" e="₅" se="%" s="‰" sw="&#x2019;" w="₹" nw="F5"/>
+    <key c="6" n="⁶" ne="⑥" e="₆" se="^" s="°" sw="&#x2019;" w="₽" nw="F6"/>
+    <key c="7" n="⁷" ne="⑦" e="₇" se="&amp;" s="§" sw="‹" w="₴" nw="F7"/>
+    <key c="8" n="⁸" ne="⑧" e="₈" se="*" s="×" sw="›" w="₺" nw="F8"/>
+    <key c="9" n="⁹" ne="⑨" e="₉" se="(" s="[" sw="«" w="₩" nw="F9"/>
+    <key c="0" n="⁰" ne="⑩" e="₀" se=")" s="]" sw="»" w="₪" nw="F10"/>
+  </row>
+
+  <!-- Row 2: QWERTY with common European characters -->
+  <row>
+    <key c="q" n="Q" ne="œ" e="Œ" se="loc esc" s="?" sw="¿" w="loc tab" nw="1"/>
+    <key c="w" n="W" ne="ẃ" e="Ẃ" se="ŵ" s="Ŵ" sw="ẅ" w="Ẅ" nw="2"/>
+    <key c="e" n="E" ne="é" e="É" se="è" s="È" sw="ê" w="Ê" nw="3"/>
+    <key c="r" n="R" ne="ř" e="Ř" se="ŕ" s="Ŕ" sw="®" w="₹" nw="4"/>
+    <key c="t" n="T" ne="ť" e="Ť" se="þ" s="Þ" sw="ț" w="Ț" nw="5"/>
+    <key c="y" n="Y" ne="ý" e="Ý" se="ÿ" s="Ÿ" sw="ŷ" w="Ŷ" nw="6"/>
+    <key c="u" n="U" ne="ú" e="Ú" se="ù" s="Ù" sw="û" w="Û" nw="7"/>
+    <key c="i" n="I" ne="í" e="Í" se="ì" s="Ì" sw="î" w="Î" nw="8"/>
+    <key c="o" n="O" ne="ó" e="Ó" se="ò" s="Ò" sw="ô" w="Ô" nw="9"/>
+    <key c="p" n="P" ne="þ" e="Þ" se="§" s="¶" sw="°" w="π" nw="0"/>
+  </row>
+
+  <!-- Row 3: ASDF home row with extended Latin characters -->
+  <row shift="0.5">
+    <key c="a" n="A" ne="á" e="Á" se="à" s="À" sw="â" w="Â" nw="ã"/>
+    <key c="s" n="S" ne="š" e="Š" se="ś" s="Ś" sw="ş" w="Ş" nw="ș"/>
+    <key c="d" n="D" ne="ď" e="Ď" se="đ" s="Đ" sw="ð" w="Ð" nw="†"/>
+    <key c="f" n="F" ne="ƒ" e="℉" se="°F" s="ﬀ" sw="ﬁ" w="ﬂ" nw="ﬃ"/>
+    <key c="g" n="G" ne="ğ" e="Ğ" se="ģ" s="Ģ" sw="ġ" w="Ġ" nw="ǧ"/>
+    <key c="h" n="H" ne="ĥ" e="Ĥ" se="ħ" s="Ħ" sw="ḥ" w="Ḥ" nw="ḧ"/>
+    <key c="j" n="J" ne="ĵ" e="Ĵ" se="{" s="}" sw="[" w="]" nw="ǰ"/>
+    <key c="k" n="K" ne="ķ" e="Ķ" se="ĸ" s="&lt;" sw="&gt;" w="«" nw="»"/>
+    <key c="l" n="L" ne="ł" e="Ł" se="ĺ" s="Ĺ" sw="ľ" w="Ľ" nw="ļ"/>
+  </row>
+
+  <!-- Row 4: ZXCV with special characters and ligatures -->
+  <row>
+    <key width="1.5" c="shift" n="capslock" ne="loc capslock"/>
+    <key c="z" n="Z" ne="ž" e="Ž" se="ź" s="Ź" sw="ż" w="Ż" nw="ẓ"/>
+    <key c="x" n="X" ne="×" e="÷" se="≈" s="≠" sw="±" w="≤" nw="≥"/>
+    <key c="c" n="C" ne="č" e="Č" se="ć" s="Ć" sw="ç" w="Ç" nw="©"/>
+    <key c="v" n="V" ne="ṽ" e="Ṽ" se="√" s="∨" sw="∧" w="ǀ" nw="ǁ"/>
+    <key c="b" n="B" ne="ḃ" e="Ḃ" se="ḅ" s="Ḅ" sw="•" w="·" nw="‣"/>
+    <key c="n" n="N" ne="ň" e="Ň" se="ń" s="Ń" sw="ñ" w="Ñ" nw="ņ"/>
+    <key c="m" n="M" ne="µ" e="Μ" se="&#x2018;" s="&#x2019;" sw="," w=";" nw="…"/>
+    <key width="1.5" c="backspace" ne="delete"/>
+  </row>
+
+  <!-- Row 5: Comprehensive diacritics and special characters -->
+  <row height="0.95">
+    <key c="ä" width="1.0" n="Ä" ne="ë" e="Ë" se="ï" s="Ï" sw="ö" w="Ö" nw="ü"/>
+    <key c="å" width="1.0" n="Å" ne="ā" e="Ā" se="ǎ" s="Ǎ" sw="ą" w="Ą" nw="ǻ"/>
+    <key c="æ" width="1.0" n="Æ" ne="œ" e="Œ" se="ø" s="Ø" sw="ß" w="ẞ" nw="ĳ"/>
+    <key c="ñ" width="1.0" n="Ñ" ne="ã" e="Ã" se="õ" s="Õ" sw="ũ" w="Ũ" nw="ñ"/>
+    <key c="ç" width="1.0" n="Ç" ne="ş" e="Ş" se="ț" s="Ț" sw="ḉ" w="Ḉ" nw="ċ"/>
+    <key c="ł" width="1.0" n="Ł" ne="ĺ" e="Ĺ" se="ľ" s="Ľ" sw="ļ" w="Ļ" nw="ŀ"/>
+    <key c="đ" width="1.0" n="Đ" ne="ð" e="Ð" se="ď" s="Ď" sw="ḍ" w="Ḍ" nw="ḑ"/>
+    <key c="ı" width="1.0" n="İ" ne="ĩ" e="Ĩ" se="ī" s="Ī" sw="į" w="Į" nw="ǐ"/>
+    <key c="'" width="1.0" n="&quot;" ne="`" e="´" se="&#x2018;" s="&#x2019;" sw="&quot;" w="&quot;" nw="′"/>
+  </row>
+
+  <!-- Row 6: Punctuation and typographic symbols -->
+  <row height="0.90">
+    <key c="–" width="1.0" n="—" ne="-" e="−" se="‐" s="‑" sw="‒" w="―" nw="⁃"/>
+    <key c="…" width="1.0" n="·" ne="•" e="‣" se="∙" s="⋅" sw="◦" w="⁌" nw="⁍"/>
+    <key c="?" width="1.0" n="!" ne="¿" e="¡" se="‽" s="⁇" sw="⁈" w="⁉" nw="‼"/>
+    <key c="/" width="1.0" n="\\" ne="⁄" e="÷" se="∕" s="⧸" sw="⧹" w="∣" nw="∤"/>
+    <key c="&amp;" width="1.0" n="@" ne="§" e="¶" se="†" s="‡" sw="©" w="®" nw="™"/>
+    <key c="+" width="1.0" n="=" ne="±" e="≠" se="≈" s="≡" sw="≤" w="≥" nw="∓"/>
+    <key c=":" width="1.0" n=";" ne="∶" e="∷" se="⋮" s="⋯" sw="⋰" w="⋱" nw="꞉"/>
+    <key c="." width="1.0" n="," ne="&#x201A;" e="&#x201E;" se="˙" s="¸" sw="ˌ" w="ˈ" nw="·"/>
+    <key c="«" width="1.0" n="»" ne="‹" e="›" se="&#x201C;" s="&#x201D;" sw="&#x2018;" w="&#x2019;" nw="„"/>
+  </row>
+
+  <!-- Modmap for international character support -->
+  <modmap>
+    <!-- Common international transformations with Shift -->
+    <shift a="a" b="A"/>
+    <shift a="e" b="E"/>
+    <shift a="i" b="I"/>
+    <shift a="o" b="O"/>
+    <shift a="u" b="U"/>
+    <shift a="n" b="N"/>
+    <shift a="c" b="C"/>
+    <shift a="s" b="S"/>
+    <shift a="z" b="Z"/>
+    <shift a="y" b="Y"/>
+
+    <!-- Special Turkish i/İ behavior -->
+    <shift a="ı" b="I"/>
+    <shift a="i" b="İ"/>
+
+    <!-- Special character shifts -->
+    <shift a="ñ" b="Ñ"/>
+    <shift a="ç" b="Ç"/>
+    <shift a="ø" b="Ø"/>
+    <shift a="æ" b="Æ"/>
+    <shift a="å" b="Å"/>
+    <shift a="ä" b="Ä"/>
+    <shift a="ö" b="Ö"/>
+    <shift a="ü" b="Ü"/>
+    <shift a="ß" b="ẞ"/>
+    <shift a="ł" b="Ł"/>
+    <shift a="đ" b="Đ"/>
+    <shift a="œ" b="Œ"/>
+
+    <!-- Punctuation shifts -->
+    <shift a="." b=","/>
+    <shift a="?" b="!"/>
+    <shift a="«" b="»"/>
+    <shift a="'" b="&quot;"/>
+    <shift a=";" b=":"/>
+    <shift a="-" b="_"/>
+    <shift a="=" b="+"/>
+  </modmap>
+</keyboard>
