@@ -103,7 +103,13 @@ public final class KeyEventHandler
     {
       case Char: send_text(String.valueOf(key.getChar())); break;
       case String: send_text(key.getString()); break;
-      case Event: _recv.handle_event_key(key.getEvent()); break;
+      case Event:
+        if (key.getEvent() == KeyValue.Event.ACTION && "✎".equals(key.getString()))
+        {
+          _recv.openScratchpad();
+          break;
+        }
+        _recv.handle_event_key(key.getEvent()); break;
       case Keyevent: send_key_down_up(key.getKeyevent()); break;
       case Modifier: break;
       case Editing: handle_editing_key(key.getEditing()); break;
@@ -131,6 +137,14 @@ public final class KeyEventHandler
   {
     send_text(content);
   }
+
+  @Override
+  public void openScratchpad()
+  {
+    _recv.openScratchpad();
+  }
+
+
 
   @Override
   public void currently_typed_word(String word)
@@ -507,6 +521,7 @@ public final class KeyEventHandler
   public static interface IReceiver extends Suggestions.Callback
   {
     public void handle_event_key(KeyValue.Event ev);
+    public void openScratchpad();
     public void set_shift_state(boolean state, boolean lock);
     public void set_compose_pending(boolean pending);
     public void selection_state_changed(boolean selection_is_ongoing);

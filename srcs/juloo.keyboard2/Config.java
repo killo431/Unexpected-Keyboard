@@ -74,6 +74,7 @@ public final class Config
   public int circle_sensitivity;
   public boolean clipboard_history_enabled;
   public int clipboard_history_duration;
+  public String timestamp_format;
 
   // Dynamically set
   /** Configuration options implied by the connected editor. */
@@ -103,7 +104,7 @@ public final class Config
     labelTextSize = 0.33f;
     sublabelTextSize = 0.22f;
     // from prefs
-    refresh(res, foldableUnfolded, dicts);
+    refresh(res, foldableUnfolded);
     // initialized later
     shouldOfferVoiceTyping = false;
     extra_keys_subtype = null;
@@ -112,7 +113,7 @@ public final class Config
   /*
    ** Reload prefs
    */
-  public void refresh(Resources res, Boolean foldableUnfolded, Dictionaries dicts)
+  public void refresh(Resources res, Boolean foldableUnfolded)
   {
     DisplayMetrics dm = res.getDisplayMetrics();
     orientation_landscape = res.getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
@@ -191,6 +192,7 @@ public final class Config
     circle_sensitivity = Integer.valueOf(_prefs.getString("circle_sensitivity", "2"));
     clipboard_history_enabled = _prefs.getBoolean("clipboard_history_enabled", false);
     clipboard_history_duration = Integer.parseInt(_prefs.getString("clipboard_history_duration", "5"));
+    timestamp_format = _prefs.getString("timestamp_format", "yyyy-MM-dd HH:mm:ss");
 
     float screen_width_dp = dm.widthPixels / dm.density;
     wide_screen = screen_width_dp >= WIDE_DEVICE_THRESHOLD;
@@ -314,6 +316,7 @@ public final class Config
     public void key_up(KeyValue value, Pointers.Modifiers mods);
     public void mods_changed(Pointers.Modifiers mods);
     public void suggestion_entered(String text);
+    public void openScratchpad();
   }
 
   /** Config migrations. */

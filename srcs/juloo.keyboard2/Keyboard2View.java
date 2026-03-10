@@ -196,6 +196,12 @@ public class Keyboard2View extends View
   }
 
   @Override
+  public void openScratchpad()
+  {
+    _config.handler.openScratchpad();
+  }
+
+  @Override
   public boolean onTouch(View v, MotionEvent event)
   {
     int p;
@@ -435,6 +441,24 @@ public class Keyboard2View extends View
     kv = modifyKey(kv, _mods);
     if (kv == null)
       return;
+
+    if (kv.getKind() == KeyValue.Kind.Event && kv.getEvent() == KeyValue.Event.SWITCH_DEVELOPER)
+    {
+      android.graphics.drawable.Drawable d = getContext().getResources().getDrawable(R.drawable.ic_developer);
+      d.setTint(labelColor(kv, isKeyDown, false));
+      int s = (int) scaleTextSize(kv, true);
+      int l = (int) x;
+      int t = (int) ((keyH - s) / 2f + y - s / 2f); // Vertically centered
+      // Draw centered at x, center of keyH+y?
+      // drawText draws at x (center aligned) and baseline y.
+      // x is center of key width.
+      l = (int) (x - s / 2.0f);
+      t = (int) (y + (keyH - s) / 2.0f);
+      d.setBounds(l, t, l + s, t + s);
+      d.draw(canvas);
+      return;
+    }
+
     float textSize = scaleTextSize(kv, true);
     Paint p = tc.label_paint(kv.hasFlagsAny(KeyValue.FLAG_KEY_FONT), labelColor(kv, isKeyDown, false), textSize);
     canvas.drawText(kv.getString(), x, (keyH - p.ascent() - p.descent()) / 2f + y, p);

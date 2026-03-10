@@ -798,6 +798,8 @@ public final class Pointers implements Handler.Callback
     /** Key can be modified or removed by returning [null]. */
     public KeyValue modifyKey(KeyValue k, Modifiers mods);
 
+    public void openScratchpad();
+
     /** A key is pressed. [getModifiers()] is uptodate. Might be called after a
         press or a swipe to a different value. Down events are not paired with
         up events. */

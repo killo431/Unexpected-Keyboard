@@ -73,6 +73,28 @@ public final class LayoutModifier
         return modify_key(key);
       }
     });
+
+    // Add visual cue for scratchpad on Ctrl keys
+    kw = kw.mapKeys(new KeyboardData.MapKey()
+    {
+      public KeyboardData.Key apply(KeyboardData.Key k)
+      {
+        if (k.keys.length > 0 && k.keys[0] != null &&
+            k.keys[0].getKind() == KeyValue.Kind.Modifier &&
+            k.keys[0].getModifier() == KeyValue.Modifier.CTRL)
+        {
+          // Check if index 1 is empty or we should overwrite it?
+          // Usually modifiers don't have swipe actions, so safe to overwrite or fill if
+          // null.
+          if (k.keys[1] == null)
+          {
+            return k.withKeyValue(1, KeyValue.makeActionKey("✎"));
+          }
+        }
+        return k;
+      }
+    });
+
     if (added_numpad != null)
       kw = kw.addNumPad(added_numpad);
     // Add extra keys that are not on the layout (including 'loc' keys)

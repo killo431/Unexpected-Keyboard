@@ -40,6 +40,21 @@ public final class Utils
     dialog.show();
   }
 
+  /**
+   * Same as [show_dialog_on_ime] but allows the dialog to interact with the
+   * IM (e.g. for EditTexts).
+   */
+  public static void show_input_dialog_on_ime(AlertDialog dialog, IBinder token)
+  {
+    Window win = dialog.getWindow();
+    WindowManager.LayoutParams lp = win.getAttributes();
+    lp.token = token;
+    lp.type = WindowManager.LayoutParams.TYPE_APPLICATION_ATTACHED_DIALOG;
+    win.setAttributes(lp);
+    // Do not set FLAG_ALT_FOCUSABLE_IM so the window can interact with the IME
+    dialog.show();
+  }
+
   public static String read_all_utf8(InputStream inp) throws Exception
   {
     InputStreamReader reader = new InputStreamReader(inp, "UTF-8");
