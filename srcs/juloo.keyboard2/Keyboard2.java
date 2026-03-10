@@ -13,6 +13,7 @@ import android.util.LogPrinter;
 import android.view.*;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
+import android.view.inputmethod.InputMethodInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.view.inputmethod.InputMethodSubtype;
 import android.widget.FrameLayout;
@@ -148,15 +149,70 @@ public class Keyboard2 extends InputMethodService
     _candidates_view = (CandidatesView)_container_view.findViewById(R.id.candidates_view);
   }
 
+  private List<InputMethodSubtype> getEnabledSubtypes(InputMethodManager imm)
+  {
+    String pkg = getPackageName();
+    for (InputMethodInfo imi : imm.getEnabledInputMethodList())
+      if (imi.getPackageName().equals(pkg))
+        return imm.getEnabledInputMethodSubtypeList(imi, true);
+    return Arrays.asList();
+  }
+
+  private ExtraKeys extra_keys_of_subtype(InputMethodSubtype subtype)
+  {
+    String extra_keys = subtype.getExtraValueOf("extra_keys");
+    String script = subtype.getExtraValueOf("script");
+    if (extra_keys != null)
+      return ExtraKeys.parse(script, extra_keys);
+    return ExtraKeys.EMPTY;
+  }
+
+  private void refreshAccentsOption(InputMethodManager imm, List<InputMethodSubtype> enabled_subtypes)
+  {
+    List<ExtraKeys> extra_keys = new ArrayList<ExtraKeys>();
+    for (InputMethodSubtype s : enabled_subtypes)
+      extra_keys.add(extra_keys_of_subtype(s));
+    _config.extra_keys_subtype = ExtraKeys.merge(extra_keys);
+  }
+
   InputMethodManager get_imm()
   {
     return (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
   }
 
+  private InputMethodSubtype defaultSubtypes(InputMethodManager imm, List<InputMethodSubtype> enabled_subtypes)
+  {
+    if (VERSION.SDK_INT < 24)
+      return imm.getCurrentInputMethodSubtype();
+    // Android might return a random subtype, for example, the first in the
+    // list alphabetically.
+    InputMethodSubtype current_subtype = imm.getCurrentInputMethodSubtype();
+    if (current_subtype == null)
+      return null;
+    for (InputMethodSubtype s : enabled_subtypes)
+      if (s.getLanguageTag().equals(current_subtype.getLanguageTag()))
+        return s;
+    return null;
+  }
+
   private void refreshSubtypeImm()
   {
+    InputMethodManager imm = get_imm();
     _config.shouldOfferVoiceTyping = true;
     KeyboardData default_layout = null;
+    _config.extra_keys_subtype = null;
+    if (VERSION.SDK_INT >= 12)
+    {
+      List<InputMethodSubtype> enabled_subtypes = getEnabledSubtypes(imm);
+      InputMethodSubtype subtype = defaultSubtypes(imm, enabled_subtypes);
+      if (subtype != null)
+      {
+        String s = subtype.getExtraValueOf("default_layout");
+        if (s != null)
+          default_layout = LayoutsPreference.layout_of_string(getResources(), s);
+        refreshAccentsOption(imm, enabled_subtypes);
+      }
+    }
     _device_locales = DeviceLocales.load(this);
     if (_device_locales.default_ != null)
     {
@@ -197,7 +253,7 @@ public class Keyboard2 extends InputMethodService
   private void refresh_config()
   {
     int prev_theme = _config.theme;
-    _config.refresh(getResources(), _foldStateTracker.isUnfolded(), _dictionaries);
+    _config.refresh(getResources(), _foldStateTracker.isUnfolded());
     refresh_current_dictionary();
     // Refreshing the theme config requires re-creating the views
     if (prev_theme != _config.theme)
@@ -234,7 +290,19 @@ public class Keyboard2 extends InputMethodService
     _currentSpecialLayout = refresh_special_layout();
     _keyboardView.setKeyboard(current_layout());
     _keyeventhandler.started(_config);
-    setInputView(_container_view);
+
+    if (SnippetManager.get(this).shouldRestoreClipboardView)
+    {
+      SnippetManager.get(this).shouldRestoreClipboardView = false;
+      if (_clipboard_pane == null)
+        _clipboard_pane = (ViewGroup) inflate_view(R.layout.clipboard_pane);
+      setInputView(_clipboard_pane);
+    }
+    else
+    {
+      setInputView(_container_view);
+    }
+
     Logs.debug_startup_input_view(info, _config);
   }
 
@@ -398,7 +466,8 @@ public class Keyboard2 extends InputMethodService
 
         case SWITCH_BACK_EMOJI:
         case SWITCH_BACK_CLIPBOARD:
-          setInputView(_keyboardView);
+        case SWITCH_BACK_DEVELOPER:
+          setInputView(_container_view);
           break;
 
         case CHANGE_METHOD_PICKER:
@@ -447,11 +516,30 @@ public class Keyboard2 extends InputMethodService
             _config.shouldOfferVoiceTyping = false;
           break;
 
+        case SWITCH_DEVELOPER:
+        {
+          if (_currentSpecialLayout == null)
+          { // Or handle differently. Here we just set view like clipboard.
+            ViewGroup devPane = (ViewGroup) inflate_view(R.layout.developer_pane);
+            ((DeveloperView) devPane).setEventHandler(_keyeventhandler);
+            setInputView(devPane);
+          }
+          break;
+        }
+
         case SWITCH_VOICE_TYPING_CHOOSER:
           VoiceImeSwitcher.choose_voice_ime(Keyboard2.this, get_imm(),
               Config.globalPrefs());
           break;
       }
+    }
+
+    @Override
+    public void openScratchpad()
+    {
+      Intent intent = new Intent(Keyboard2.this, ScratchpadActivity.class);
+      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+      startActivity(intent);
     }
 
     public void set_shift_state(boolean state, boolean lock)

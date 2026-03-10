@@ -144,6 +144,7 @@
     <string name="key_descr_forward_delete_word">Delete a word on the right</string>
     <string name="key_descr_gesture">Gesture</string>
     <string name="clipboard_history_heading">Recently copied text</string>
+    <string name="clipboard_search_hint">Search snippets...</string>
     <string name="clipboard_pin_heading">Pinned</string>
     <string name="clipboard_remove_confirm">Remove this clipboard item?</string>
     <string name="clipboard_remove_confirmed">Yes</string>
@@ -160,4 +161,16 @@
     <string name="dictionaries_download_failed">Download failed</string>
     <string name="candidates_status_no_dict">No dictionary installed</string>
     <string name="candidates_status_install">Install</string>
+    <string name="pref_timestamp_format_title">Timestamp format</string>
+    <string name="pref_timestamp_format_summary">Custom format for the timestamp button (e.g. yyyy-MM-dd)</string>
+    <string name="pref_timestamp_custom_menu">Custom Format</string>
+    <string name="pref_category_backup">Backup &amp; Restore</string>
+    <string name="pref_backup_title">Backup</string>
+    <string name="pref_backup_summary">Save settings and snippets to a file</string>
+    <string name="pref_restore_title">Restore</string>
+    <string name="pref_restore_summary">Restore settings and snippets from a file</string>
+    <string name="backup_success">Backup successful</string>
+    <string name="backup_failed">Backup failed</string>
+    <string name="restore_success">Restore successful</string>
+    <string name="restore_failed">Restore failed</string>
 </resources>

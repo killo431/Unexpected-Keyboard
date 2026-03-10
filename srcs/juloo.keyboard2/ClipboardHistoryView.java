@@ -37,10 +37,24 @@ public final class ClipboardHistoryView extends NonScrollListView
       the list of pinned clipboards. */
   public void pin_entry(int pos)
   {
-    ClipboardPinView v = (ClipboardPinView)((ViewGroup)getParent().getParent()).findViewById(R.id.clipboard_pin_view);
     String clip = _history.get(pos);
-    v.add_entry(clip);
-    _service.remove_history_entry(clip);
+    android.content.Intent intent = new android.content.Intent(getContext(), SnippetMoveActivity.class);
+    intent.putExtra(SnippetMoveActivity.EXTRA_CONTENT, clip);
+    intent.addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK);
+    getContext().startActivity(intent);
+
+    // Optional: remove from history immediately? Or wait?
+    // User request implies "Pinning recently copied text". Usually moving it to
+    // snippets implies removing from history
+    // or arguably keeping it. The original code removed it.
+    // However, if the user cancels the MoveActivity, we lose the item if we remove
+    // it here.
+    // Better to remove it ONLY if saved. But we don't get a callback easily.
+    // Let's keep it in history for safety, or assume the user will complete the
+    // action.
+    // Original code: _service.remove_history_entry(clip);
+    // I will comment it out for safety, as we are now launching an async activity.
+    // _service.remove_history_entry(clip);
   }
 
   /** Send the specified entry to the editor. */
