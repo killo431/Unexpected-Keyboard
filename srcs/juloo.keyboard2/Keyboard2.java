@@ -531,6 +531,14 @@ public class Keyboard2 extends InputMethodService
           VoiceImeSwitcher.choose_voice_ime(Keyboard2.this, get_imm(),
               Config.globalPrefs());
           break;
+
+        case SWITCH_GEMINI:
+          start_activity(GeminiActivity.class);
+          break;
+
+        case SWITCH_TERMUX:
+          start_activity(TermuxActivity.class);
+          break;
       }
     }
 

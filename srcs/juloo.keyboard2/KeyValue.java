@@ -26,6 +26,8 @@ public final class KeyValue implements Comparable<KeyValue>
     SWITCH_VOICE_TYPING_CHOOSER,
     SWITCH_DEVELOPER,
     SWITCH_BACK_DEVELOPER,
+    SWITCH_GEMINI,
+    SWITCH_TERMUX,
   }
 
   // Must be evaluated in the reverse order of their values.
@@ -637,6 +639,8 @@ public final class KeyValue implements Comparable<KeyValue>
       case "voice_typing": return eventKey(0xE015, Event.SWITCH_VOICE_TYPING, FLAG_SMALLER_FONT);
       case "voice_typing_chooser": return eventKey(0xE015, Event.SWITCH_VOICE_TYPING_CHOOSER, FLAG_SMALLER_FONT);
       case "switch_developer": return eventKey("Dev", Event.SWITCH_DEVELOPER, FLAG_SMALLER_FONT);
+      case "gemini": return eventKey("AI", Event.SWITCH_GEMINI, FLAG_SMALLER_FONT);
+      case "termux_run": return eventKey("Tmx", Event.SWITCH_TERMUX, FLAG_SMALLER_FONT);
 
       /* Key events */
       case "esc": return keyeventKey("Esc", KeyEvent.KEYCODE_ESCAPE, FLAG_SMALLER_FONT);

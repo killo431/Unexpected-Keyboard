@@ -190,6 +190,8 @@ Value                  | Meaning
 `voice_typing`         | Begin voice typing.
 `voice_typing_chooser` | Shows a menu where you can choose which voice typing provider to use, then begins voice typing when you make a selection.
 `shareText`            | Emit a share Intent for the selected text. **Oddity:** This is in CamelCase.
+`gemini`               | Opens the Gemini AI dialog for AI-powered text generation and code creation. Requires a free API key from [aistudio.google.com](https://aistudio.google.com/app/apikey). The key can be entered in the dialog itself or saved in Settings → AI & Scripting.
+`termux_run`           | Opens the Termux Run dialog for executing shell commands and scripts directly in [Termux](https://termux.dev). Requires Termux (F-Droid) with "Allow External Apps" enabled.
 
 ## Unused
 These keys are known to do nothing.
