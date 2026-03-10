@@ -188,7 +188,7 @@ public class SnippetCreationActivity extends Activity
     AlertDialog dialog = new AlertDialog.Builder(this)
         .setTitle(title)
         .setView(layout)
-        .setNegativeButton(positiveButton, new DialogInterface.OnClickListener()
+        .setPositiveButton(positiveButton, new DialogInterface.OnClickListener()
         {
           @Override
           public void onClick(DialogInterface dialog, int which)
@@ -225,7 +225,7 @@ public class SnippetCreationActivity extends Activity
             finish();
           }
         })
-        .setPositiveButton("Cancel", new DialogInterface.OnClickListener()
+        .setNegativeButton("Cancel", new DialogInterface.OnClickListener()
         {
           @Override
           public void onClick(DialogInterface dialog, int which)

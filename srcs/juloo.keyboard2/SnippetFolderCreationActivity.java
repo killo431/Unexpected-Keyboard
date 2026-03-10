@@ -47,7 +47,7 @@ public class SnippetFolderCreationActivity extends Activity
     new AlertDialog.Builder(this)
         .setTitle(title)
         .setView(input)
-        .setPositiveButton("Cancel", new DialogInterface.OnClickListener()
+        .setNegativeButton("Cancel", new DialogInterface.OnClickListener()
         {
           @Override
           public void onClick(DialogInterface dialog, int which)
@@ -55,7 +55,7 @@ public class SnippetFolderCreationActivity extends Activity
             finish();
           }
         })
-        .setNegativeButton(positiveButton, new DialogInterface.OnClickListener()
+        .setPositiveButton(positiveButton, new DialogInterface.OnClickListener()
         {
           @Override
           public void onClick(DialogInterface dialog, int which)
