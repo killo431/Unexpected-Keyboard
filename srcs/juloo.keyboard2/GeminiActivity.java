@@ -52,9 +52,10 @@ public class GeminiActivity extends Activity
   private static final int CONNECT_TIMEOUT_MS = 30_000;
   private static final int READ_TIMEOUT_MS    = 60_000;
 
-  /** REST endpoint for Gemini 2.0 Flash (text-only, low-latency). */
-  private static final String GEMINI_API_URL =
-    "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=";
+  /** Base REST endpoint for Gemini API. */
+  private static final String GEMINI_API_BASE_URL =
+    "https://generativelanguage.googleapis.com/v1beta/models/";
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState)
@@ -234,6 +235,9 @@ public class GeminiActivity extends Activity
       // Persist the API key for convenience
       prefs.edit().putString(KEY_API_KEY, apiKey).apply();
 
+      // Get the selected model from config
+      String model = (config != null) ? config.gemini_model : "gemini-3.5-flash";
+
       boolean isCode = codeBtn.isChecked();
       String fullPrompt = isCode
           ? "Generate code for the following. Return only the code without any explanation:\n\n" + prompt
@@ -244,7 +248,7 @@ public class GeminiActivity extends Activity
 
       new Thread(() ->
       {
-        String result = callGeminiApi(apiKey, fullPrompt);
+        String result = callGeminiApi(apiKey, fullPrompt, model);
         mainHandler.post(() ->
         {
           generateBtn.setEnabled(true);
@@ -292,13 +296,15 @@ public class GeminiActivity extends Activity
    *
    * @param apiKey  The user's Gemini API key.
    * @param prompt  The full prompt text to send.
+   * @param model   The Gemini model to use (e.g., "gemini-3.5-flash").
    * @return The generated text, or an "Error: …" message on failure.
    */
-  private String callGeminiApi(String apiKey, String prompt)
+  private String callGeminiApi(String apiKey, String prompt, String model)
   {
     try
     {
-      URL url = new URL(GEMINI_API_URL + apiKey);
+      String apiUrl = GEMINI_API_BASE_URL + model + ":generateContent?key=" + apiKey;
+      URL url = new URL(apiUrl);
       HttpURLConnection conn = (HttpURLConnection) url.openConnection();
       conn.setRequestMethod("POST");
       conn.setRequestProperty("Content-Type", "application/json; charset=utf-8");

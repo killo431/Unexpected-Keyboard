@@ -75,6 +75,7 @@ public final class Config
   public boolean clipboard_history_enabled;
   public int clipboard_history_duration;
   public String timestamp_format;
+  public String gemini_model;
 
   // Dynamically set
   /** Configuration options implied by the connected editor. */
@@ -193,6 +194,7 @@ public final class Config
     clipboard_history_enabled = _prefs.getBoolean("clipboard_history_enabled", false);
     clipboard_history_duration = Integer.parseInt(_prefs.getString("clipboard_history_duration", "5"));
     timestamp_format = _prefs.getString("timestamp_format", "yyyy-MM-dd HH:mm:ss");
+    gemini_model = _prefs.getString("gemini_model", "gemini-3.5-flash");
 
     float screen_width_dp = dm.widthPixels / dm.density;
     wide_screen = screen_width_dp >= WIDE_DEVICE_THRESHOLD;
