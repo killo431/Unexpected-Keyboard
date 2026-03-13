@@ -237,7 +237,7 @@ public class GeminiActivity extends Activity
 
       // Get the selected model from config
       Config config = Config.globalConfig();
-      String model = (config != null) ? config.gemini_model : "gemini-2.0-flash";
+      String model = (config != null) ? config.gemini_model : "gemini-3.5-flash";
 
       boolean isCode = codeBtn.isChecked();
       String fullPrompt = isCode
@@ -297,7 +297,7 @@ public class GeminiActivity extends Activity
    *
    * @param apiKey  The user's Gemini API key.
    * @param prompt  The full prompt text to send.
-   * @param model   The Gemini model to use (e.g., "gemini-2.0-flash").
+   * @param model   The Gemini model to use (e.g., "gemini-3.5-flash").
    * @return The generated text, or an "Error: …" message on failure.
    */
   private String callGeminiApi(String apiKey, String prompt, String model)
