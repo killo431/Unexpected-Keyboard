@@ -363,11 +363,29 @@ public class Keyboard2 extends InputMethodService
   @android.annotation.SuppressLint("NewApi")
   private Object createInlinePresentationSpecApi30(android.util.Size minSize, android.util.Size maxSize, android.os.Bundle style)
   {
-    // This method isolates the InlinePresentationSpec type reference
-    // The return type is Object to avoid compile-time class loading
-    return new android.view.inline.InlinePresentationSpec.Builder(minSize, maxSize)
-        .setStyle(style)
-        .build();
+    // This method isolates the InlinePresentationSpec type reference using reflection
+    // to avoid compile-time class loading which fails on SDK < 30
+    try
+    {
+      Class<?> specClass = Class.forName("android.view.inline.InlinePresentationSpec");
+      Class<?> builderClass = Class.forName("android.view.inline.InlinePresentationSpec$Builder");
+
+      // Create Builder instance: new InlinePresentationSpec.Builder(minSize, maxSize)
+      Object builder = builderClass.getConstructor(android.util.Size.class, android.util.Size.class)
+          .newInstance(minSize, maxSize);
+
+      // Call setStyle(style)
+      builder = builderClass.getMethod("setStyle", android.os.Bundle.class)
+          .invoke(builder, style);
+
+      // Call build()
+      return builderClass.getMethod("build").invoke(builder);
+    }
+    catch (Exception e)
+    {
+      Log.e("Keyboard2", "Error creating InlinePresentationSpec via reflection", e);
+      return null;
+    }
   }
 
   /**
