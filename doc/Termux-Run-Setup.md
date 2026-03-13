@@ -2,6 +2,8 @@
 
 Unexpected Keyboard includes a built-in dialog for **running shell commands and scripts in Termux** directly from your keyboard. Once set up, you can tap a single key, type or paste a command, and execute it in Termux without switching apps.
 
+> 💡 **New Feature**: [Termux Command Autosuggestions](Termux-Command-Suggestions.md) - Get intelligent command completions as you type in Termux!
+
 ---
 
 ## What it does
@@ -216,7 +218,9 @@ cat ~/notes.txt
 
 ## See also
 
+- **[Termux Command Suggestions](Termux-Command-Suggestions.md)** - Intelligent command autosuggestions for faster typing
 - [Possible-key-values.md](Possible-key-values.md) — full reference for key values, including `gemini` and `termux_run`
 - [Custom-layouts.md](Custom-layouts.md) — how to build or modify a keyboard layout
+- [Termux-Layouts.md](Termux-Layouts.md) — optimized keyboard layouts for Termux
 - [Gemini-AI-Setup.md](Gemini-AI-Setup.md) — generate AI text and code from your keyboard
 - [Termux documentation](https://wiki.termux.com/wiki/Main_Page) — official Termux wiki

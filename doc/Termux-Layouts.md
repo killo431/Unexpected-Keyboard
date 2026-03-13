@@ -2,6 +2,8 @@
 
 This document describes the 4 custom keyboard layouts optimized specifically for Termux usage. Each layout is designed with a different focus to suit various terminal workflows and usage patterns.
 
+> 💡 **New Feature**: [Termux Command Autosuggestions](Termux-Command-Suggestions.md) - Get intelligent command completions as you type!
+
 ---
 
 ## Overview
@@ -229,6 +231,7 @@ For a complete guide on creating and editing layouts, see [Custom-layouts.md](Cu
 
 ## Additional Resources
 
+- **[Termux Command Suggestions](Termux-Command-Suggestions.md)** - Intelligent command autosuggestions for Termux
 - [Termux Run Setup Guide](Termux-Run-Setup.md) - Setup and usage of Termux integration
 - [Custom Layouts Guide](Custom-layouts.md) - How to create and edit keyboard layouts
 - [Possible Key Values](Possible-key-values.md) - Complete reference of available key values
