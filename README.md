@@ -43,6 +43,12 @@ usage as the primary lens — is available in
 | **Gemini AI** (`gemini` key) | Generate text and code via the free Gemini API — result inserts directly at the cursor. | [doc/Gemini-AI-Setup.md](doc/Gemini-AI-Setup.md) |
 | **Termux Run** (`termux_run` key) | Execute shell commands and scripts in Termux without leaving your current app. | [doc/Termux-Run-Setup.md](doc/Termux-Run-Setup.md) |
 
+## Password Manager Integration
+
+| Feature | Description | Setup guide |
+|---------|-------------|-------------|
+| **Bitwarden Autofill** (`autofill` key) | Seamless integration with Bitwarden and other password managers via Android's Autofill Framework. Auto-detects password fields and displays inline suggestions. | [doc/Bitwarden-Autofill-Setup.md](doc/Bitwarden-Autofill-Setup.md) |
+
 ## Contributing
 
 For instructions on building the application, see
