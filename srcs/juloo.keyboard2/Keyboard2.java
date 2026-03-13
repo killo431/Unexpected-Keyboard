@@ -731,6 +731,11 @@ public class Keyboard2 extends InputMethodService
       return _handler;
     }
 
+    public android.content.Context getContext()
+    {
+      return Keyboard2.this;
+    }
+
     public void set_suggestions(List<String> suggestions)
     {
       _candidates_view.set_candidates(suggestions);

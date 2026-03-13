@@ -37,6 +37,10 @@ public final class EditorConfig
   // Doesn't override [_config.suggestions_enabled].
   public boolean should_show_candidates_view;
 
+  /** Termux detection. */
+  public boolean is_termux = false;
+  public String package_name = null;
+
   /** Autofill hints. */
   public boolean is_autofill_field = false;
   public boolean is_password_field = false;
@@ -49,6 +53,9 @@ public final class EditorConfig
   {
     int inputType = info.inputType & InputType.TYPE_MASK_CLASS;
     int options = info.imeOptions;
+    /* Package name detection for Termux. */
+    package_name = info.packageName;
+    is_termux = (package_name != null && package_name.equals("com.termux"));
     /* Selection mode.
        Editors with [TYPE_NULL] are for example Termux and Emacs. */
     selection_mode_enabled = inputType != InputType.TYPE_NULL;
