@@ -176,6 +176,11 @@
     <string name="pref_category_ai">AI &amp; Scripting</string>
     <string name="pref_gemini_api_key_title">Gemini API Key</string>
     <string name="pref_gemini_api_key_summary">API key for Gemini text and code generation (get one free at aistudio.google.com)</string>
+    <string name="pref_gemini_model_title">Gemini Model</string>
+    <string name="pref_gemini_model_e_flash_2_0">Gemini 2.0 Flash (Fast, recommended)</string>
+    <string name="pref_gemini_model_e_flash_1_5">Gemini 1.5 Flash</string>
+    <string name="pref_gemini_model_e_flash_8b">Gemini 1.5 Flash-8B (Fastest)</string>
+    <string name="pref_gemini_model_e_pro_1_5">Gemini 1.5 Pro (Most capable)</string>
     <string name="key_descr_gemini">Gemini AI text/code generation</string>
     <string name="key_descr_termux_run">Run command in Termux</string>
 </resources>
