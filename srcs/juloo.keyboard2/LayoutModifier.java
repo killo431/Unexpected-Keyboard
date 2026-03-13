@@ -34,6 +34,17 @@ public final class LayoutModifier
     extra_keys.put(KeyValue.getKeyByName("config"), KeyboardData.PreferredPos.ANYWHERE);
     extra_keys.putAll(globalConfig.extra_keys_param);
     extra_keys.putAll(globalConfig.extra_keys_custom);
+
+    // Add autofill key for password/username fields
+    if (globalConfig.editor_config.is_autofill_field)
+    {
+      KeyValue autofillKey = KeyValue.getKeyByName("autofill");
+      if (autofillKey != null)
+      {
+        // Add autofill key with high priority for password fields
+        extra_keys.put(autofillKey, KeyboardData.PreferredPos.TOP);
+      }
+    }
     // Number row and numpads are added after the modification pass to allow
     // removing the number keys from the main layout.
     KeyboardData.Row added_number_row = null;
