@@ -145,7 +145,7 @@ public class GeminiActivity extends Activity
     apiKeyLabel.setPadding(0, pad / 2, 0, 0);
     layout.addView(apiKeyLabel);
 
-    SharedPreferences prefs = Config.globalPrefs();
+    SharedPreferences prefs = DirectBootAwarePreferences.get_shared_preferences(this);
     final EditText apiKeyField = new EditText(this);
     apiKeyField.setText(prefs.getString(KEY_API_KEY, ""));
     apiKeyField.setHint("Paste your API key here…");
