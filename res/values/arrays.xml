@@ -135,12 +135,14 @@
     <item>next</item>
   </string-array>
   <string-array name="pref_gemini_model_entries">
+    <item>@string/pref_gemini_model_e_flash_latest</item>
     <item>@string/pref_gemini_model_e_flash_3_0</item>
     <item>@string/pref_gemini_model_e_pro_3_0</item>
     <item>@string/pref_gemini_model_e_flash_3_5</item>
     <item>@string/pref_gemini_model_e_pro_3_5</item>
   </string-array>
   <string-array name="pref_gemini_model_values">
+    <item>gemini-flash-latest</item>
     <item>gemini-3.0-flash</item>
     <item>gemini-3.0-pro</item>
     <item>gemini-3.5-flash</item>
