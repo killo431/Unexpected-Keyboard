@@ -336,17 +336,16 @@ public class Keyboard2 extends InputMethodService
       android.util.Size minSize = new android.util.Size(100, 0);
       android.util.Size maxSize = new android.util.Size(740, 100);
 
-      java.util.ArrayList<android.view.inline.InlinePresentationSpec> specs =
-        new java.util.ArrayList<>();
+      // Use raw ArrayList to avoid compile-time reference to android.view.inline.InlinePresentationSpec
+      // which is only available in API 30+
+      java.util.ArrayList specs = new java.util.ArrayList();
 
       // Request up to 5 inline suggestions
       for (int i = 0; i < 5; i++)
       {
         android.os.Bundle style = new android.os.Bundle();
-        android.view.inline.InlinePresentationSpec spec =
-          new android.view.inline.InlinePresentationSpec.Builder(minSize, maxSize)
-            .setStyle(style)
-            .build();
+        // Use reflection-style approach to create InlinePresentationSpec without direct type reference
+        Object spec = createInlinePresentationSpecApi30(minSize, maxSize, style);
         specs.add(spec);
       }
 
@@ -359,6 +358,16 @@ public class Keyboard2 extends InputMethodService
       Log.e("Keyboard2", "Error creating inline suggestions request", e);
       return null;
     }
+  }
+
+  @android.annotation.SuppressLint("NewApi")
+  private Object createInlinePresentationSpecApi30(android.util.Size minSize, android.util.Size maxSize, android.os.Bundle style)
+  {
+    // This method isolates the InlinePresentationSpec type reference
+    // The return type is Object to avoid compile-time class loading
+    return new android.view.inline.InlinePresentationSpec.Builder(minSize, maxSize)
+        .setStyle(style)
+        .build();
   }
 
   /**
