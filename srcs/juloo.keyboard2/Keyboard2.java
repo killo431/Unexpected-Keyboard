@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.inputmethodservice.InputMethodService;
 import android.os.Build.VERSION;
+import android.os.Bundle;
+import android.os.CancellationSignal;
 import android.os.Handler;
 import android.os.IBinder;
 import android.text.InputType;
@@ -304,6 +306,117 @@ public class Keyboard2 extends InputMethodService
     }
 
     Logs.debug_startup_input_view(info, _config);
+  }
+
+  /**
+   * Support for inline autofill suggestions (API 30+).
+   * This allows password managers like Bitwarden to display suggestions
+   * directly in the keyboard UI.
+   */
+  @Override
+  public android.view.inputmethod.InlineSuggestionsRequest onCreateInlineSuggestionsRequest(Bundle uiExtras)
+  {
+    if (VERSION.SDK_INT >= 30 && _config.editor_config.is_autofill_field)
+    {
+      try
+      {
+        // Request inline autofill suggestions
+        android.util.Size minSize = new android.util.Size(100, 0);
+        android.util.Size maxSize = new android.util.Size(740, 100);
+
+        java.util.ArrayList<android.view.inline.InlinePresentationSpec> specs =
+          new java.util.ArrayList<>();
+
+        // Request up to 5 inline suggestions
+        for (int i = 0; i < 5; i++)
+        {
+          android.os.Bundle style = new android.os.Bundle();
+          android.view.inline.InlinePresentationSpec spec =
+            new android.view.inline.InlinePresentationSpec.Builder(minSize, maxSize)
+              .setStyle(style)
+              .build();
+          specs.add(spec);
+        }
+
+        return new android.view.inputmethod.InlineSuggestionsRequest.Builder(specs)
+          .setMaxSuggestionCount(5)
+          .build();
+      }
+      catch (Exception e)
+      {
+        Log.e("Keyboard2", "Error creating inline suggestions request", e);
+      }
+    }
+    return super.onCreateInlineSuggestionsRequest(uiExtras);
+  }
+
+  /**
+   * Handle inline autofill suggestions response (API 30+).
+   */
+  @Override
+  public boolean onInlineSuggestionsResponse(android.view.inputmethod.InlineSuggestionsResponse response)
+  {
+    if (VERSION.SDK_INT >= 30)
+    {
+      try
+      {
+        java.util.List<android.view.inputmethod.InlineSuggestion> suggestions =
+          response.getInlineSuggestions();
+
+        if (suggestions != null && !suggestions.isEmpty())
+        {
+          Log.d("Keyboard2", "Received " + suggestions.size() + " inline autofill suggestions");
+          // Display the suggestions in the keyboard UI
+          // This would integrate with the CandidatesView or a custom autofill bar
+          display_inline_autofill_suggestions(suggestions);
+          return true;
+        }
+      }
+      catch (Exception e)
+      {
+        Log.e("Keyboard2", "Error handling inline suggestions response", e);
+      }
+    }
+    return super.onInlineSuggestionsResponse(response);
+  }
+
+  /**
+   * Display inline autofill suggestions in the keyboard.
+   */
+  private void display_inline_autofill_suggestions(java.util.List<android.view.inputmethod.InlineSuggestion> suggestions)
+  {
+    if (VERSION.SDK_INT >= 30 && _candidates_view != null)
+    {
+      // For now, we'll inflate and display the suggestions inline
+      // In the future, this could be enhanced with a dedicated autofill bar
+      android.widget.LinearLayout autofillContainer = new android.widget.LinearLayout(this);
+      autofillContainer.setOrientation(android.widget.LinearLayout.HORIZONTAL);
+      autofillContainer.setPadding(8, 8, 8, 8);
+
+      for (android.view.inputmethod.InlineSuggestion suggestion : suggestions)
+      {
+        try
+        {
+          android.util.Size size = new android.util.Size(200, 50);
+          android.view.View suggestionView = suggestion.inflate(
+            this,
+            size,
+            getMainExecutor(),
+            new java.util.function.Consumer<View>() {
+              @Override
+              public void accept(View view)
+              {
+                autofillContainer.addView(view);
+              }
+            }
+          );
+        }
+        catch (Exception e)
+        {
+          Log.e("Keyboard2", "Error inflating inline suggestion", e);
+        }
+      }
+    }
   }
 
   @Override

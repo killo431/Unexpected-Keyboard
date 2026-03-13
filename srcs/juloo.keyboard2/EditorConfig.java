@@ -37,6 +37,12 @@ public final class EditorConfig
   // Doesn't override [_config.suggestions_enabled].
   public boolean should_show_candidates_view;
 
+  /** Autofill hints. */
+  public boolean is_autofill_field = false;
+  public boolean is_password_field = false;
+  public boolean is_username_field = false;
+  public String[] autofill_hints = null;
+
   public EditorConfig() {}
 
   public void refresh(EditorInfo info, Resources res)
@@ -84,6 +90,77 @@ public final class EditorConfig
     initial_sel_end = info.initialSelEnd;
     /* Suggestions */
     should_show_candidates_view = CandidatesView.should_show(info);
+    /* Autofill hints */
+    detect_autofill_hints(info, inputType);
+  }
+
+  void detect_autofill_hints(EditorInfo info, int inputType)
+  {
+    // Reset autofill state
+    is_autofill_field = false;
+    is_password_field = false;
+    is_username_field = false;
+    autofill_hints = null;
+
+    // Check for password input type
+    int variation = info.inputType & InputType.TYPE_MASK_VARIATION;
+    if (variation == InputType.TYPE_TEXT_VARIATION_PASSWORD ||
+        variation == InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD ||
+        variation == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD)
+    {
+      is_password_field = true;
+      is_autofill_field = true;
+    }
+
+    // Check for email address (often username field)
+    if (variation == InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS ||
+        variation == InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS)
+    {
+      is_username_field = true;
+      is_autofill_field = true;
+    }
+
+    // Check autofill hints (API 26+)
+    if (VERSION.SDK_INT >= 26 && info.autofillId != null)
+    {
+      String[] hints = info.hintText != null ? new String[]{info.hintText.toString()} : null;
+
+      // Try to get autofill hints from extras
+      if (info.extras != null)
+      {
+        CharSequence[] extraHints = info.extras.getCharSequenceArray("android.view.autofill.hints");
+        if (extraHints != null && extraHints.length > 0)
+        {
+          hints = new String[extraHints.length];
+          for (int i = 0; i < extraHints.length; i++)
+            hints[i] = extraHints[i].toString();
+        }
+      }
+
+      if (hints != null && hints.length > 0)
+      {
+        autofill_hints = hints;
+        for (String hint : hints)
+        {
+          if (hint == null) continue;
+          String lowerHint = hint.toLowerCase();
+
+          // Check for password hints
+          if (lowerHint.contains("password"))
+          {
+            is_password_field = true;
+            is_autofill_field = true;
+          }
+          // Check for username/email hints
+          else if (lowerHint.contains("username") || lowerHint.contains("email") ||
+                   lowerHint.contains("userid") || lowerHint.contains("login"))
+          {
+            is_username_field = true;
+            is_autofill_field = true;
+          }
+        }
+      }
+    }
   }
 
   String actionLabel_of_imeAction(int action, Resources res)
