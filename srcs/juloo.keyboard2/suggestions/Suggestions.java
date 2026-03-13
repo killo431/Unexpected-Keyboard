@@ -1,5 +1,6 @@
 package juloo.keyboard2.suggestions;
 
+import android.content.Context;
 import java.util.Arrays;
 import java.util.List;
 import juloo.cdict.Cdict;
@@ -12,14 +13,50 @@ public final class Suggestions
 {
   Callback _callback;
   Config _config;
+  TermuxCommandsProvider _termuxCommands;
 
   public Suggestions(Callback c, Config conf)
   {
     _callback = c;
     _config = conf;
+    _termuxCommands = null;
+  }
+
+  public void setContext(Context context)
+  {
+    if (context != null && _termuxCommands == null)
+    {
+      _termuxCommands = new TermuxCommandsProvider(context);
+    }
   }
 
   public void currently_typed_word(String word)
+  {
+    // Check if we're in Termux and should provide command suggestions
+    if (_config.editor_config != null && _config.editor_config.is_termux && _termuxCommands != null)
+    {
+      provide_termux_suggestions(word);
+    }
+    else
+    {
+      provide_dictionary_suggestions(word);
+    }
+  }
+
+  private void provide_termux_suggestions(String word)
+  {
+    if (word.length() < 2)
+    {
+      _callback.set_suggestions(NO_SUGGESTIONS);
+      return;
+    }
+
+    // Get Termux command suggestions
+    List<String> termuxSuggestions = _termuxCommands.getSuggestions(word, 3);
+    _callback.set_suggestions(termuxSuggestions);
+  }
+
+  private void provide_dictionary_suggestions(String word)
   {
     Cdict dict = _config.current_dictionary;
     if (word.length() < 2 || dict == null)

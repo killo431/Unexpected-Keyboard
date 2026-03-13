@@ -39,6 +39,7 @@ public final class KeyEventHandler
         this.new Autocapitalisation_callback());
     _mods = Pointers.Modifiers.EMPTY;
     _suggestions = new Suggestions(recv, config);
+    _suggestions.setContext(recv.getContext());
     _typedword = new CurrentlyTypedWord(handler, this);
   }
 
@@ -527,6 +528,7 @@ public final class KeyEventHandler
     public void selection_state_changed(boolean selection_is_ongoing);
     public InputConnection getCurrentInputConnection();
     public Handler getHandler();
+    public android.content.Context getContext();
   }
 
   class Autocapitalisation_callback implements Autocapitalisation.Callback

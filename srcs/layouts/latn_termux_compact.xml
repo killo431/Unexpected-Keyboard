@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Termux Compact Layout
+
+     Optimized for Termux terminal usage with minimal design.
+     Features:
+     - Essential terminal symbols on primary swipes
+     - Quick access to common shell characters: -, _, |, /, \, ~
+     - Numbers accessible via northeast swipes
+     - Tab and Esc keys for navigation
+     - All brackets and quotes easily accessible
+     - Compact 3-row design for maximum screen space
+-->
+<keyboard name="Termux Compact" script="latin">
+  <row>
+    <key c="q" ne="1" nw="!" se="loc esc"/>
+    <key c="w" ne="2" nw="~" sw="\@"/>
+    <key c="e" ne="3" nw="\#" sw="$"/>
+    <key c="r" ne="4" sw="%"/>
+    <key c="t" ne="5" nw="^" sw="&amp;"/>
+    <key c="y" ne="6" nw="-" sw="_"/>
+    <key c="u" ne="7" nw="=" sw="+"/>
+    <key c="i" ne="8" nw="*" sw="|"/>
+    <key c="o" ne="9" sw="(" se=")"/>
+    <key c="p" ne="0" sw="[" se="]"/>
+  </row>
+  <row>
+    <key shift="0.5" c="a" nw="loc tab" ne="`" sw="loc §"/>
+    <key c="s" ne="&lt;" sw="&gt;"/>
+    <key c="d" ne="{" sw="}"/>
+    <key c="f" ne="/" sw="\\"/>
+    <key c="g" ne=":" sw=";"/>
+    <key c="h" ne="termux_run"/>
+    <key c="j" ne="'" sw="&quot;"/>
+    <key c="k" ne="&amp;" sw="loc €"/>
+    <key c="l" ne="\?" sw="."/>
+  </row>
+  <row>
+    <key width="1.5" c="shift" ne="loc capslock"/>
+    <key c="z" ne="," sw="loc †"/>
+    <key c="x" ne="copy" sw="paste"/>
+    <key c="c" ne="cursor_left" sw="cursor_right"/>
+    <key c="v" ne="cursor_up" sw="cursor_down"/>
+    <key c="b" ne="home" sw="end"/>
+    <key c="n" ne="page_up" sw="page_down"/>
+    <key c="m" ne="f11_placeholder" sw="f12_placeholder"/>
+    <key width="1.5" c="backspace" ne="delete"/>
+  </row>
+</keyboard>
