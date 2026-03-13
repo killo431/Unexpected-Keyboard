@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Termux Commands Layout
+
+     Command-line focused layout for efficient Termux operation.
+     Features:
+     - Quick access to common shell operators: |, &, >, <, >>, &&, ||
+     - Path navigation: /, \, ~, .
+     - Command separators: ;, |, &, &&
+     - File operations symbols
+     - Tab completion key prominently placed
+     - Cursor navigation and selection
+     - Termux run key for executing commands
+     - Function keys for vim/nano/emacs
+     - Pipe and redirect operators easily accessible
+-->
+<keyboard name="Termux Commands" script="latin">
+  <row>
+    <key c="q" ne="1" nw="!" sw="loc esc"/>
+    <key c="w" ne="2" nw="~" sw="\@"/>
+    <key c="e" ne="3" nw="$" se="loc €"/>
+    <key c="r" ne="4" nw="%" sw="&amp;"/>
+    <key c="t" ne="5" nw="*" sw="^"/>
+    <key c="y" ne="6" nw="|" sw="&amp;&amp;"/>
+    <key c="u" ne="7" nw="&gt;" sw="&gt;&gt;"/>
+    <key c="i" ne="8" nw="&lt;" sw="&lt;&lt;"/>
+    <key c="o" ne="9" nw="(" sw=")"/>
+    <key c="p" ne="0" nw="[" sw="]"/>
+  </row>
+  <row>
+    <key shift="0.5" c="a" nw="loc tab" ne="`" sw="loc §"/>
+    <key c="s" ne="/" sw="\\"/>
+    <key c="d" ne="-" sw="_"/>
+    <key c="f" ne="=" sw="+"/>
+    <key c="g" ne=";" sw=":"/>
+    <key c="h" ne="|" sw="||"/>
+    <key c="j" ne="'" sw="&quot;"/>
+    <key c="k" ne="." sw=","/>
+    <key c="l" ne="\?" sw="termux_run"/>
+  </row>
+  <row>
+    <key width="1.5" c="shift" ne="loc capslock"/>
+    <key c="z" ne="{" sw="}"/>
+    <key c="x" ne="copy" sw="paste"/>
+    <key c="c" ne="cursor_left" sw="cursor_right"/>
+    <key c="v" ne="cursor_up" sw="cursor_down"/>
+    <key c="b" ne="home" sw="end"/>
+    <key c="n" ne="page_up" sw="page_down"/>
+    <key c="m" ne="f11_placeholder" sw="f12_placeholder"/>
+    <key width="1.5" c="backspace" ne="delete"/>
+  </row>
+</keyboard>

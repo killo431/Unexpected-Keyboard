@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Termux Hybrid Layout
+
+     Balanced layout for both text entry and terminal work in Termux.
+     Features:
+     - Standard QWERTY base for familiar text entry
+     - Programming symbols on swipes for coding
+     - Terminal operators easily accessible
+     - Numbers on northeast swipes (traditional placement)
+     - Common punctuation maintains standard positions
+     - Termux run key integrated
+     - Navigation keys on bottom row
+     - Good balance between typing prose and executing commands
+     - Suitable for documentation, scripting, and terminal work
+-->
+<keyboard name="Termux Hybrid" script="latin">
+  <row>
+    <key c="q" ne="1" nw="!" se="loc esc"/>
+    <key c="w" ne="2" nw="~" sw="\@"/>
+    <key c="e" ne="3" nw="\#" sw="$" se="loc €"/>
+    <key c="r" ne="4" nw="%" sw="&amp;"/>
+    <key c="t" ne="5" nw="^" sw="*"/>
+    <key c="y" ne="6" nw="-" sw="_"/>
+    <key c="u" ne="7" nw="=" sw="+"/>
+    <key c="i" ne="8" nw="[" sw="]"/>
+    <key c="o" ne="9" nw="(" sw=")"/>
+    <key c="p" ne="0" nw="{" sw="}"/>
+  </row>
+  <row>
+    <key shift="0.5" c="a" nw="loc tab" ne="`" sw="loc §"/>
+    <key c="s" ne="&lt;" sw="&gt;" nw="loc ß"/>
+    <key c="d" ne="/" sw="\\"/>
+    <key c="f" ne="|" sw="&amp;"/>
+    <key c="g" ne=";" sw=":"/>
+    <key c="h" ne="'" sw="&quot;"/>
+    <key c="j" ne="," sw="."/>
+    <key c="k" ne="\?" sw="termux_run"/>
+    <key c="l"/>
+  </row>
+  <row>
+    <key width="1.5" c="shift" ne="loc capslock"/>
+    <key c="z" ne="copy" sw="cut"/>
+    <key c="x" ne="paste" sw="select_all"/>
+    <key c="c" ne="cursor_left" sw="cursor_right"/>
+    <key c="v" ne="cursor_up" sw="cursor_down"/>
+    <key c="b" ne="home" sw="end"/>
+    <key c="n" ne="page_up" sw="page_down"/>
+    <key c="m" ne="f11_placeholder" sw="f12_placeholder"/>
+    <key width="1.5" c="backspace" ne="delete"/>
+  </row>
+</keyboard>

@@ -29,4 +29,23 @@ latn_neo2: Layout redefines the bottom row but some important keys are missing, 
 latn_qwertz_cz_multifunctional: Layout includes some ASCII punctuation but not all, missing: `
 latn_qwertz_sk: Layout includes some ASCII punctuation but not all, missing: `
 latn_qzerty_it: Layout includes some ASCII punctuation but not all, missing: #, $, \, `, ~
+latn_termux_cmd: Duplicate keys: |
+latn_termux_cmd: Layout includes some ASCII punctuation but not all, missing: #
+latn_termux_cmd: Layout contains editing keys, unexpected: copy, paste
+latn_termux_cmd: These keys are now added automatically, unexpected: f11_placeholder, f12_placeholder
+latn_termux_cmd: Layout contains keys present in the bottom row, unexpected: cursor_left, cursor_right
+latn_termux_compact: Duplicate keys: &
+latn_termux_compact: Layout contains editing keys, unexpected: copy, paste
+latn_termux_compact: These keys are now added automatically, unexpected: f11_placeholder, f12_placeholder
+latn_termux_compact: Layout contains keys present in the bottom row, unexpected: cursor_left, cursor_right
+latn_termux_dev: Duplicate keys: !, =
+latn_termux_dev: Layout contains editing keys, unexpected: copy, cut, paste
+latn_termux_dev: These keys are now added automatically, unexpected: f11_placeholder, f12_placeholder
+latn_termux_dev: Layout contains keys present in the bottom row, unexpected: cursor_left, cursor_right, switch_developer
+latn_termux_dev: Layout contains unknown keys: select_all
+latn_termux_hybrid: Duplicate keys: &
+latn_termux_hybrid: Layout contains editing keys, unexpected: copy, cut, paste
+latn_termux_hybrid: These keys are now added automatically, unexpected: f11_placeholder, f12_placeholder
+latn_termux_hybrid: Layout contains keys present in the bottom row, unexpected: cursor_left, cursor_right
+latn_termux_hybrid: Layout contains unknown keys: select_all
 urdu_phonetic_ur: Layout includes some ASCII punctuation but not all, missing: <, >, ?, `, |, ~

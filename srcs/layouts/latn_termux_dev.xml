@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Termux Developer Layout
+
+     Programming-focused layout optimized for coding in Termux.
+     Features:
+     - All bracket types easily accessible: (), [], {}, <>
+     - Common operators on swipes: +, -, *, /, =, !=
+     - Programming symbols: &, |, ^, ~, $, @
+     - Numbers on northeast swipes (1-0)
+     - Quick access to quotes, backticks, and string delimiters
+     - Tab key for indentation
+     - Termux run key for quick command execution
+     - Git and version control symbols
+-->
+<keyboard name="Termux Developer" script="latin">
+  <row>
+    <key c="q" ne="1" nw="!" sw="\?" se="loc esc"/>
+    <key c="w" ne="2" nw="~" sw="\@" se="loc €"/>
+    <key c="e" ne="3" nw="=" sw="\#"/>
+    <key c="r" ne="4" nw="$" sw="%"/>
+    <key c="t" ne="5" nw="&amp;" sw="*"/>
+    <key c="y" ne="6" nw="^" sw="|"/>
+    <key c="u" ne="7" nw="(" sw=")"/>
+    <key c="i" ne="8" nw="[" sw="]"/>
+    <key c="o" ne="9" nw="{" sw="}"/>
+    <key c="p" ne="0" nw="&lt;" sw="&gt;"/>
+  </row>
+  <row>
+    <key shift="0.5" c="a" nw="loc tab" ne="`" sw="loc §"/>
+    <key c="s" ne="/" sw="\\"/>
+    <key c="d" ne="-" sw="_"/>
+    <key c="f" ne="=" sw="+"/>
+    <key c="g" ne="!" sw="!="/>
+    <key c="h" ne=":" sw=";"/>
+    <key c="j" ne="'" sw="&quot;"/>
+    <key c="k" ne="." sw=","/>
+    <key c="l" ne="termux_run" sw="switch_developer"/>
+  </row>
+  <row>
+    <key width="1.5" c="shift" ne="loc capslock"/>
+    <key c="z" ne="copy" sw="cut"/>
+    <key c="x" ne="paste" sw="select_all"/>
+    <key c="c" ne="cursor_left" sw="cursor_right"/>
+    <key c="v" ne="cursor_up" sw="cursor_down"/>
+    <key c="b" ne="home" sw="end"/>
+    <key c="n" ne="page_up" sw="page_down"/>
+    <key c="m" ne="f11_placeholder" sw="f12_placeholder"/>
+    <key width="1.5" c="backspace" ne="delete"/>
+  </row>
+</keyboard>
