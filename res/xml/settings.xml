@@ -72,6 +72,6 @@
   </PreferenceCategory>
   <PreferenceCategory android:title="@string/pref_category_ai">
     <EditTextPreference android:key="gemini_api_key" android:title="@string/pref_gemini_api_key_title" android:summary="@string/pref_gemini_api_key_summary" android:singleLine="true" android:inputType="textPassword"/>
-    <ListPreference android:key="gemini_model" android:title="@string/pref_gemini_model_title" android:summary="%s" android:defaultValue="gemini-3.5-flash" android:entries="@array/pref_gemini_model_entries" android:entryValues="@array/pref_gemini_model_values"/>
+    <ListPreference android:key="gemini_model" android:title="@string/pref_gemini_model_title" android:summary="%s" android:defaultValue="gemini-flash-latest" android:entries="@array/pref_gemini_model_entries" android:entryValues="@array/pref_gemini_model_values"/>
   </PreferenceCategory>
 </PreferenceScreen>

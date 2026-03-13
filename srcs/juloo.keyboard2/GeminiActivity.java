@@ -236,7 +236,7 @@ public class GeminiActivity extends Activity
       prefs.edit().putString(KEY_API_KEY, apiKey).apply();
 
       // Get the selected model from config
-      String model = (config != null) ? config.gemini_model : "gemini-3.5-flash";
+      String model = (config != null) ? config.gemini_model : "gemini-flash-latest";
 
       boolean isCode = codeBtn.isChecked();
       String fullPrompt = isCode
