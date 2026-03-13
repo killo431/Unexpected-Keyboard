@@ -42,7 +42,7 @@ public final class LayoutModifier
       if (autofillKey != null)
       {
         // Add autofill key with high priority for password fields
-        extra_keys.put(autofillKey, KeyboardData.PreferredPos.TOP);
+        extra_keys.put(autofillKey, KeyboardData.PreferredPos.DEFAULT);
       }
     }
     // Number row and numpads are added after the modification pass to allow

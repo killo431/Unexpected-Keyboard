@@ -121,7 +121,7 @@ public final class EditorConfig
     }
 
     // Check autofill hints (API 26+)
-    if (VERSION.SDK_INT >= 26 && info.autofillId != null)
+    if (VERSION.SDK_INT >= 26)
     {
       String[] hints = info.hintText != null ? new String[]{info.hintText.toString()} : null;
 
