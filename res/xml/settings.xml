@@ -70,4 +70,7 @@
     <juloo.keyboard2.prefs.ClickablePreference android:key="backup" android:title="@string/pref_backup_title" android:summary="@string/pref_backup_summary"/>
     <juloo.keyboard2.prefs.ClickablePreference android:key="restore" android:title="@string/pref_restore_title" android:summary="@string/pref_restore_summary"/>
   </PreferenceCategory>
+  <PreferenceCategory android:title="@string/pref_category_ai">
+    <EditTextPreference android:key="gemini_api_key" android:title="@string/pref_gemini_api_key_title" android:summary="@string/pref_gemini_api_key_summary" android:singleLine="true" android:inputType="textPassword"/>
+  </PreferenceCategory>
 </PreferenceScreen>
