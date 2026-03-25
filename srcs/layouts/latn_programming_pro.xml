@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Programming Pro Layout - Ultimate Developer Keyboard
+
+     This layout is meticulously designed for software developers who need instant
+     access to programming symbols, operators, and special characters used across
+     multiple programming languages including:
+     - C, C++, C#, Java, Kotlin, Swift
+     - Python, Ruby, PHP, Perl
+     - JavaScript, TypeScript, Go, Rust
+     - Shell scripting, SQL, RegEx
+     - Web development (HTML, CSS, XML, JSON)
+
+     Key features:
+     - All ASCII programming symbols within easy reach
+     - Brackets, braces, parentheses on home row
+     - Common operators optimized for swipes
+     - Mathematical and logical operators
+     - Special programming characters ($, @, #, &, etc.)
+     - Terminal and shell scripting optimized
+     - Comment symbols (//, /*, #, etc.)
+     - Markdown and documentation symbols
+     - Git and version control characters
+     - Regex special characters
+
+     Design philosophy:
+     - Minimize finger travel for frequent symbols
+     - Group related symbols logically
+     - Balance between left and right hand
+     - Common pairs placed together (e.g., () {} [])
+
+     Layout by: Unexpected Keyboard Community
+     License: CC0 (Public Domain)
+-->
+<keyboard name="Programming Pro" script="latin">
+  <!-- Row 1: Numbers with programming symbols and hex digits -->
+  <row>
+    <key c="1" n="!" ne="¹" e="F1" se="①" s="|" sw="¦" w="keyevent:131" nw="loc esc"/>
+    <key c="2" n="@" ne="²" e="F2" se="②" s="~" sw="&amp;" w="keyevent:132" nw="&quot;"/>
+    <key c="3" n="#" ne="³" e="F3" se="③" s="`" sw="^" w="keyevent:133" nw="§"/>
+    <key c="4" n="$" ne="⁴" e="F4" se="④" s="%" sw="¢" w="keyevent:134" nw="€"/>
+    <key c="5" n="%" ne="⁵" e="F5" se="⑤" s="&amp;" sw="°" w="keyevent:135" nw="±"/>
+    <key c="6" n="^" ne="⁶" e="F6" se="⑥" s="*" sw="×" w="keyevent:136" nw="÷"/>
+    <key c="7" n="&amp;" ne="⁷" e="F7" se="⑦" s="&amp;&amp;" sw="∧" w="keyevent:137" nw="¬"/>
+    <key c="8" n="*" ne="⁸" e="F8" se="⑧" s="/*" sw="*/" w="keyevent:138" nw="∞"/>
+    <key c="9" n="(" ne="⁹" e="F9" se="⑨" s=")" sw="[" w="keyevent:139" nw="≤"/>
+    <key c="0" n=")" ne="⁰" e="F10" se="⑩" s="]" sw="}" w="keyevent:140" nw="≥"/>
+  </row>
+
+  <!-- Row 2: QWERTY with operators and special characters -->
+  <row>
+    <key c="q" n="Q" ne="loc esc" e="quit" se="?" s="¿" sw="\?" w="query" nw="loc tab"/>
+    <key c="w" ne="&lt;&lt;" e="while" se="with" s="where" sw="&lt;=" w="write" nw="www"/>
+    <key c="e" ne="==" e="export" se="extends" s="enum" sw="elif" w="else" nw="echo"/>
+    <key c="r" ne="=&gt;" e="return" se="require" s="reverse" sw="regex" w="render" nw="range"/>
+    <key c="t" ne="!=" e="this" se="then" s="throw" sw="try" w="true" nw="type"/>
+    <key c="y" ne="&gt;&gt;" e="yield" se="yes" s="::" sw="||" w="|&gt;" nw="..."/>
+    <key c="u" ne="undefined" e="union" se="use" s="unsigned" sw="until" w="update" nw="unique"/>
+    <key c="i" ne="import" e="interface" se="if" s="int" sw="include" w="impl" nw="index"/>
+    <key c="o" ne="object" e="or" se="}" s=")" sw="override" w="{" nw="("/>
+    <key c="p" ne="print" e="private" se="public" s="package" sw="pass" w="protected" nw="param"/>
+  </row>
+
+  <!-- Row 3: Home row optimized for brackets and common symbols -->
+  <row shift="0.5">
+    <key c="a" n="A" ne="async" e="await" se="assert" s="auto" sw="args" w="add" nw="and"/>
+    <key c="s" ne="static" e="struct" se="switch" s="string" sw="super" w="self" nw="select"/>
+    <key c="d" ne="def" e="default" se="delete" s="double" sw="data" w="do" nw="dict"/>
+    <key c="f" ne="function" e="for" se="false" s="finally" sw="final" w="from" nw="func"/>
+    <key c="g" ne="get" e="global" se="goto" s="generic" sw="guard" w="group" nw="git"/>
+    <key c="h" ne="http" e="https" se="head" s="hash" sw="help" w="handle" nw="html"/>
+    <key c="j" ne="}" e="json" se="]" s="join" sw="jump" w="{" nw="["/>
+    <key c="k" ne="&gt;" e="&lt;" se="key" s="keyof" sw="kill" w="kwargs" nw="const"/>
+    <key c="l" ne="lambda" e="let" se="length" s="list" sw="log" w="local" nw="loop"/>
+  </row>
+
+  <!-- Row 4: ZXCV with special programming characters -->
+  <row>
+    <key width="1.5" c="shift" n="capslock" ne="loc capslock"/>
+    <key c="z" n="Z" ne="zip" e="zero"/>
+    <key c="x" n="X" ne="0x" e="xml" se="xor" s="exit"/>
+    <key c="c" ne="class" e="case" se="catch" s="const" sw="char" w="continue" nw="call"/>
+    <key c="v" ne="void" e="var" se="val" s="vector" sw="virtual" w="vue" nw="vim"/>
+    <key c="b" ne="bool" e="break" se="byte" s="buffer" sw="build" w="base" nw="bin"/>
+    <key c="n" ne="null" e="new" se="namespace" s="not" sw="none" w="next" nw="name"/>
+    <key c="m" ne="module" e="main" se="map" s="match" sw="method" w="mut" nw="meta"/>
+    <key width="1.5" c="backspace" ne="delete"/>
+  </row>
+
+  <!-- Row 5: Programming-specific operators and symbols -->
+  <row height="0.95">
+    <key c="-" width="1.0" n="_" ne="--" e="-=" se="→" s="-&gt;" sw="&lt;-" w="−" nw="—"/>
+    <key c="+" width="1.0" n="=" ne="++" e="+=" se="≠" s="≈" sw="±" w="≡" nw="≢"/>
+    <key c="/" width="1.0" n="\\" ne="//" e="/*" se="*/" s="÷" sw="/=" w="⁄" nw="//="/>
+    <key c=":" width="1.0" n=";" ne="::" e=":=" se="∴" s="∵" sw=";;" w="∈" nw="∉"/>
+    <key c="&lt;" width="1.0" n="&gt;" ne="&lt;=" e="&lt;-" se="«" s="‹" sw="&lt;&lt;" w="&lt;/" nw="&lt;=&gt;"/>
+    <key c="|" width="1.0" n="&amp;" ne="||" e="|&gt;" se="│" s="║" sw="&amp;&amp;" w="¦" nw="|="/>
+    <key c="'" width="1.0" n="&quot;" ne="`" e="´" se="'" s="'" sw="&quot;" w="&quot;" nw="″"/>
+    <key c="." width="1.0" n="," ne="..." e=".." se="·" s="•" sw="…" w="․" nw="..="/>
+    <key c="?" width="1.0" n="!" ne="\?" e="¿" se="‽" s="¡" sw="‼" w="⁇" nw="⁈"/>
+  </row>
+
+  <!-- Row 6: Additional useful symbols for advanced programming -->
+  <row height="0.90">
+    <key c="[" width="1.1" n="{" ne="[[" e="[]" se="⟦" s="⟨" sw="⌈" w="〚" nw="【"/>
+    <key c="]" width="1.1" n="}" ne="]]" e="][" se="⟧" s="⟩" sw="⌉" w="〛" nw="】"/>
+    <key c="$" width="1.1" n="€" ne="$$" e="${" se="¢" s="£" sw="¥" w="₹" nw="₿"/>
+    <key c="&amp;" width="1.1" n="*" ne="&amp;=" e="&amp;&amp;" se="⊕" s="⊗" sw="⊙" w="⊛" nw="&amp;mut"/>
+    <key c="=" width="1.1" n="+" ne="==" e="===" se="=&gt;" s="!=" sw="!==" w=":=" nw="&lt;=&gt;"/>
+    <key c="#" width="1.1" n="\@" ne="##" e="#!" se="№" s="＃" sw="⌗" w="#include" nw="#!/"/>
+    <key c="\\" width="1.1" n="/" ne="\\\\" e="\\\n" se="∖" s="⧵" sw="⧹" w="\\t" nw="\\n"/>
+    <key c="`" width="1.1" n="~" ne="```" e="``" se="˜" s="～" sw="˷" w="′" nw="‵"/>
+    <key c="^" width="1.1" n="%" ne="^^" e="^=" se="∧" s="⊻" sw="⌃" w="ˆ" nw="∨"/>
+  </row>
+
+  <!-- Modmap for programming-specific shift behavior -->
+  <modmap>
+    <!-- Make Shift+numbers produce common programming patterns -->
+    <shift a="1" b="!"/>
+    <shift a="2" b="@"/>
+    <shift a="3" b="#"/>
+    <shift a="4" b="$"/>
+    <shift a="5" b="%"/>
+    <shift a="6" b="^"/>
+    <shift a="7" b="&amp;"/>
+    <shift a="8" b="*"/>
+    <shift a="9" b="("/>
+    <shift a="0" b=")"/>
+
+    <!-- Common programming transformations -->
+    <shift a="=" b="+"/>
+    <shift a="-" b="_"/>
+    <shift a="[" b="{"/>
+    <shift a="]" b="}"/>
+    <shift a=";" b=":"/>
+    <shift a="'" b="&quot;"/>
+    <shift a="," b="&lt;"/>
+    <shift a="." b="&gt;"/>
+    <shift a="/" b="?"/>
+    <shift a="\\" b="|"/>
+    <shift a="`" b="~"/>
+  </modmap>
+</keyboard>
