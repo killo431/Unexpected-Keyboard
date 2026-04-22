@@ -695,6 +695,18 @@ public class Keyboard2 extends InputMethodService
         case SWITCH_TERMUX:
           start_activity(TermuxActivity.class);
           break;
+
+        case LAUNCH_1PASSWORD:
+        {
+          Intent onepassword = getPackageManager()
+            .getLaunchIntentForPackage("com.onepassword.android");
+          if (onepassword != null)
+          {
+            onepassword.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(onepassword);
+          }
+          break;
+        }
       }
     }
 

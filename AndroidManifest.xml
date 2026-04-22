@@ -53,5 +53,6 @@
     <intent>
       <action android:name="android.view.InputMethod" />
     </intent>
+    <package android:name="com.onepassword.android" />
   </queries>
 </manifest>
