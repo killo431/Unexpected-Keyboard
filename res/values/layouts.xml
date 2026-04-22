@@ -46,7 +46,10 @@
     <item>latn_azerty_fr</item>
     <item>latn_bepo_fr</item>
     <item>latn_bone</item>
+    <item>latn_gaming_emoji</item>
+    <item>latn_international_polyglot</item>
     <item>latn_neo2</item>
+    <item>latn_programming_pro</item>
     <item>latn_qwerty_apl</item>
     <item>latn_qwerty_az</item>
     <item>latn_qwerty_bqn</item>
@@ -142,7 +145,10 @@
     <item>AZERTY (Français)</item>
     <item>BEPO (Français)</item>
     <item>Bone</item>
+    <item>Gaming &amp; Emoji</item>
+    <item>International Polyglot</item>
     <item>Neo 2</item>
+    <item>Programming Pro</item>
     <item>QWERTY (APL)</item>
     <item>QWERTY (Azərbaycanca)</item>
     <item>QWERTY (BQN)</item>
@@ -238,7 +244,10 @@
     <item>@xml/latn_azerty_fr</item>
     <item>@xml/latn_bepo_fr</item>
     <item>@xml/latn_bone</item>
+    <item>@xml/latn_gaming_emoji</item>
+    <item>@xml/latn_international_polyglot</item>
     <item>@xml/latn_neo2</item>
+    <item>@xml/latn_programming_pro</item>
     <item>@xml/latn_qwerty_apl</item>
     <item>@xml/latn_qwerty_az</item>
     <item>@xml/latn_qwerty_bqn</item>
