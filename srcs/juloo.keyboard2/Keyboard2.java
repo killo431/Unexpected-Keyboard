@@ -710,9 +710,9 @@ public class Keyboard2 extends InputMethodService
             AutofillManager afm = getSystemService(AutofillManager.class);
             if (afm != null && afm.isEnabled())
             {
-              InputConnection conn = getCurrentInputConnection();
-              if (conn != null)
-                autofillTriggered = conn.performContextMenuAction(android.R.id.autofill);
+              InputConnection autofill_conn = getCurrentInputConnection();
+              if (autofill_conn != null)
+                autofillTriggered = autofill_conn.performContextMenuAction(android.R.id.autofill);
             }
           }
           // Fall back to launching 1Password directly when autofill is not
