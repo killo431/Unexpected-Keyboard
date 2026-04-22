@@ -48,6 +48,7 @@ usage as the primary lens — is available in
 | Feature | Description | Setup guide |
 |---------|-------------|-------------|
 | **Bitwarden Autofill** (`autofill` key) | Seamless integration with Bitwarden and other password managers via Android's Autofill Framework. Auto-detects password fields and displays inline suggestions. | [doc/Bitwarden-Autofill-Setup.md](doc/Bitwarden-Autofill-Setup.md) |
+| **1Password** (`1password` key) | Trigger 1Password autofill directly from the keyboard. Falls back to launching the 1Password app when it is not set as the system autofill provider. | [doc/1Password-Setup.md](doc/1Password-Setup.md) |
 
 ## Contributing
 
