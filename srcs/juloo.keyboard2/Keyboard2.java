@@ -13,6 +13,7 @@ import android.text.InputType;
 import android.util.Log;
 import android.util.LogPrinter;
 import android.view.*;
+import android.view.autofill.AutofillManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodInfo;
@@ -35,6 +36,8 @@ import juloo.cdict.Cdict;
 public class Keyboard2 extends InputMethodService
   implements SharedPreferences.OnSharedPreferenceChangeListener
 {
+  private static final String PACKAGE_1PASSWORD = "com.onepassword.android";
+
   /** The view containing the keyboard and candidates view. */
   private ViewGroup _container_view;
   private Keyboard2View _keyboardView;
@@ -695,6 +698,39 @@ public class Keyboard2 extends InputMethodService
         case SWITCH_TERMUX:
           start_activity(TermuxActivity.class);
           break;
+
+        case LAUNCH_1PASSWORD:
+        {
+          // On API 26+, prefer the Android Autofill Framework: if 1Password (or
+          // any provider) is configured as the autofill service, this surfaces
+          // its native UI without leaving the current app.
+          boolean autofillTriggered = false;
+          if (VERSION.SDK_INT >= 26)
+          {
+            AutofillManager afm = getSystemService(AutofillManager.class);
+            if (afm != null && afm.isEnabled())
+            {
+              InputConnection autofill_conn = getCurrentInputConnection();
+              if (autofill_conn != null)
+                autofillTriggered = autofill_conn.performContextMenuAction(android.R.id.autofill);
+            }
+          }
+          // Fall back to launching 1Password directly when autofill is not
+          // available, not configured, or the editor does not support it.
+          if (!autofillTriggered)
+          {
+            Intent onepassword = getPackageManager()
+              .getLaunchIntentForPackage(PACKAGE_1PASSWORD);
+            if (onepassword != null)
+            {
+              onepassword.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+              startActivity(onepassword);
+            }
+            else
+              Log.d("Keyboard2", "1Password is not installed (package: " + PACKAGE_1PASSWORD + ")");
+          }
+          break;
+        }
       }
     }
 
