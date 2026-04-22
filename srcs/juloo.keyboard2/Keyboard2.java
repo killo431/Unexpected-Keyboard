@@ -726,6 +726,8 @@ public class Keyboard2 extends InputMethodService
               onepassword.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
               startActivity(onepassword);
             }
+            else
+              Log.d("Keyboard2", "1Password is not installed (package: " + PACKAGE_1PASSWORD + ")");
           }
           break;
         }
